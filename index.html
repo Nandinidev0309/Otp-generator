@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random OTP generater</title>
+    <style>
+        *{
+            margin: 0px;
+            padding: 0px;
+            font-family: "segoe UI";
+            box-sizing: border-box;
+        }
+        body{
+            height: 100%;
+            width: 320px;
+            display: grid;
+            margin-left: 40%;
+            margin-top:10% ;
+            place-content: center;
+            /* text-align: center; */
+
+        }
+        .container{
+            min-width: 300px;
+            height: 320px;
+            border: 2px solid lightblue;
+            border-radius: 20px;
+            display: flex;
+            justify-content: baseline;
+            flex-direction: column;
+            align-items: center;
+            gap: 40px;
+            
+        }
+        img{
+            width:100px
+        }
+
+
+        /* ...........loader */
+        #otp span{
+            display: inline-block;
+            width: 80px;
+            height: 80px;
+            margin: 20px;
+            border: lightgray 15px solid;
+            border-radius:50%;
+            border-top-color: #f1c40f;
+            animation: anim 1s linear infinite;
+        }
+        @keyframes anim{
+            100%{
+                transform: rotate(360deg);
+            }
+        }
+
+        /* styling for otp */
+
+        #otp{
+            height: 100px;
+            font-size: 2.4rem;
+            font-weight: bold;
+            margin: 0 auto;
+            color: gray;
+            letter-spacing: 5px;
+            display: grid;
+            place-content: center;
+        }
+        button{
+            width: 50%;
+            padding: 5px 10px;
+            font-size: 1.1rem;
+            border-radius: 20px;
+            font-weight: 800;
+            color: rgb(13, 13, 14);
+            margin-top: -100px;
+            background-color: aquamarine;
+        }
+        h2{
+            padding:40px;
+            color: rgb(142, 94, 232);
+        }
+       
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>OTP Generator</h2>
+        <h1 id="h"></h1>
+
+
+        <!-- .............display otp -->
+
+        <div id="otp">
+        </div>
+
+        <button id="btn" onclick="otpgenerator()">Get OTP</button>
+    </div>
+
+    <script >
+        let getBtn=document.getElementById("btn")
+        let hd=document.getElementById("h")
+        
+        function otpgenerator(){
+                let d=Math.floor(Math.random()*1000000)   
+                hd.textContent=d
+                hd.style.color="green"
+
+                
+        }
+    </script>
+</body>
+</html>
